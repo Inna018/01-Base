@@ -187,3 +187,9 @@ class Worker {
     return workers.slice().sort((a, b) => a.getSalary() - b.getSalary());
   }
 }
+
+//Email address:
+//[A-Za-z0-9][\w\.-]{3,}[A-Za-z0-9]\@\w+\.\w+
+
+// Word with upper letter:
+// [A-Z][a-z]+!*
