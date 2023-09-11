@@ -1,3 +1,4 @@
+//task 1:
 let list = document.getElementById("list");
 let newList = document.getElementsByTagName("li");
 
