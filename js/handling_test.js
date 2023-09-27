@@ -1,37 +1,26 @@
 //task 1:
-
 function sumSliceArray(arr, first, second) {
-  if (!Array.isArray(arr)) {
-    throw new TypeError("Input is not an array");
-  }
+  first = parseInt(first);
+  second = parseInt(second);
 
   if (isNaN(first) || isNaN(second)) {
-    throw new TypeError("Input is not a number");
+    throw new Error("Invalid input. Please enter number value!");
   }
 
-  const firstIndex = parseInt(first, 10);
-  const secondIndex = parseInt(second, 10);
-
-  if (
-    firstIndex < 0 ||
-    firstIndex >= arr.length ||
-    secondIndex < 0 ||
-    secondIndex >= arr.length
-  ) {
-    throw new RangeError("Index out of range");
+  if (first >= arr.length || second >= arr.length) {
+    throw new Error("Invalid input. Indexes out of array range");
   }
-
-  return arr[firstIndex] + arr[secondIndex];
+  return arr[first - 1] + arr[second - 1];
 }
 
 const arr = [1, 2, 3, 4, 5, 6, 7];
 console.log(sumSliceArray(arr, 3, 5));
 
 try {
-  const arr2 = [1, 2, 3, 4, 5, 6, 7];
-  sumSliceArray(arr2, 8, "five");
-} catch (e) {
-  console.log("Error");
+  const res = sumSliceArray(arr, 3, 11);
+  console.log(res);
+} catch (error) {
+  console.log("Error: ", error.message);
 }
 
 //task 2:
@@ -81,4 +70,16 @@ try {
   checkAge();
 } catch (error) {
   console.log(error.name);
+}
+
+//task 3:
+function calcRectangleArea(width, height) {
+  if (typeof width !== 'number' || typeof height !== 'number') {
+    throw "Parameter is not a number";
+  }
+  return width * height;
+}
+
+try{
+  
 }
